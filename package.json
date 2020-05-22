@@ -1,0 +1,24 @@
+{
+  "name": "form-elements",
+  "version": "1.0.0",
+  "description": "Supercharge form elements",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capnjosh/form-elements.git"
+  },
+  "author": "Joshua Tan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/capnjosh/form-elements/issues"
+  },
+  "homepage": "https://github.com/capnjosh/form-elements#readme",
+  "dependencies": {}
+}

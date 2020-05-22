@@ -1,0 +1,76 @@
+@charset "UTF-8";
+fe-text span.helper-text:before {
+  content: "﻿";
+}
+
+fe-text label, fe-text input[type=text].minimize-label ~ label {
+  transform-origin: 0 0;
+  transition: transform 0.34s;
+}
+
+fe-text span.helper-text {
+  display: table-row;
+  font-size: smaller;
+  color: #212121;
+}
+
+fe-text {
+  display: inline-block;
+  position: relative;
+  min-width: 144px;
+}
+fe-text input[type=text] {
+  width: 100%;
+  background-color: transparent;
+  font-size: 0.9rem;
+  color: #212121;
+  padding: 21px 0 8px 0;
+  outline: none;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #8c8c8c;
+  text-overflow: ellipsis;
+  border-radius: 0;
+}
+fe-text input[type=text].minimize-label ~ label {
+  transform: scale(0.76) translate(0, -55%);
+}
+fe-text input[type=text]:focus {
+  border-color: #212121;
+}
+fe-text input[type=text]:focus ~ label {
+  color: inherit;
+}
+fe-text input[type=text][disabled], fe-text input[type=text][readonly] {
+  color: #8c8c8c;
+}
+fe-text input[type=text][disabled] ~ label, fe-text input[type=text][disabled].minimize-label ~ label, fe-text input[type=text][readonly] ~ label, fe-text input[type=text][readonly].minimize-label ~ label {
+  color: #8c8c8c;
+}
+fe-text input[type=text][disabled]:focus, fe-text input[type=text][readonly]:focus {
+  border-color: #8c8c8c;
+}
+fe-text input[type=text][disabled] ~ span.helper-text, fe-text input[type=text][readonly] ~ span.helper-text {
+  color: #8c8c8c;
+}
+fe-text input[type=text]:not([disabled]) ~ span.helper-text span.user,
+fe-text input[type=text]:not([disabled]) ~ span.helper-text span.disabled {
+  display: none;
+}
+fe-text input[type=text][disabled][readonly] ~ span.helper-text span.user,
+fe-text input[type=text][disabled][readonly] ~ span.helper-text span.readonly, fe-text input[type=text]:not([readonly]) ~ span.helper-text span.user,
+fe-text input[type=text]:not([readonly]) ~ span.helper-text span.readonly {
+  display: none;
+}
+fe-text input[type=text]:not([disabled]):not([readonly]) ~ span.helper-text span.user {
+  display: inline;
+}
+fe-text label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 21px 0 8px 0;
+  color: #212121;
+}
+
+/*# sourceMappingURL=form-elements.css.map */

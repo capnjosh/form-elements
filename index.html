@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="dist/form-elements.css" rel="stylesheet">
+
+  <style>
+
+    html {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      -webkit-box-sizing: inherit;
+      -moz-box-sizing: inherit;
+      box-sizing: inherit;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      color: hsla( 0, 0%, 13%, 1 )
+    }
+
+    .demo-container {
+      width: 100%;
+      padding: 21px;
+    }
+
+    .demo-container .header {
+      display: flex;
+      font-weight: bold;
+      border-bottom: 1px solid hsla( 0, 0%, 88%, 1 );
+    }
+
+    .demo-container .content {
+      display: flex;
+      border-bottom: 1px solid hsla( 0, 0%, 88%, 1 );
+    }
+
+    .demo-container .cell {
+      flex-basis: 100%;
+      padding: 13px;
+      align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="demo-container">
+    <div class="header">
+      <div class="cell">Form Element</div>
+      <div class="cell">Description</div>
+      <div class="cell">Interactive Sample</div>
+    </div>
+    <div class="content">
+      <div class="cell">
+        <code>&lt;fe-text&gt;&lt;/fe-text&gt;</code>
+      </div>
+      <div class="cell">
+        Simple replacement for <code>input[ type="text" ]</code>
+      </div>
+      <div class="cell">
+        <fe-text name="input-text-1"></fe-text>
+      </div>
+    </div>
+    <div class="content">
+      <div class="cell">
+        <code>&lt;fe-text placeholder="First Name"&gt;&lt;/fe-text&gt;</code>
+      </div>
+      <div class="cell">
+        With the <code>placeholder</code> attribute. Placeholder will not minimize on focus.
+      </div>
+      <div class="cell">
+        <fe-text name="input-text-2" placeholder="First Name"></fe-text>
+      </div>
+    </div>
+    <div class="content">
+      <div class="cell">
+        <code>&lt;fe-text placeholder="Enter Date" data-helper-text="In YYYY-MM-DD format."&gt;&lt;/fe-text&gt;</code>
+      </div>
+      <div class="cell">
+        With the <code>data-helper-text</code> attribute. It adds hints to what the expected input should be.
+      </div>
+      <div class="cell">
+        <fe-text name="input-text-3" placeholder="Enter Date" data-helper-text="In YYYY-MM-DD format."></fe-text>
+      </div>
+    </div>
+    <div class="content">
+      <div class="cell">
+        <code>&lt;fe-text disabled placeholder="Enter Date" data-helper-text="In YYYY-MM-DD format."&gt;&lt;/fe-text&gt;</code>
+      </div>
+      <div class="cell">
+        Supports <code>disabled</code> and <code>readonly</code> attributes.
+        A relevant hint will appear instead of the value in <code>data-helper-text</code>.
+        <code>disabled</code> behavior supercedes <code>readonly</code> if both attributes are present.
+      </div>
+      <div class="cell">
+        <fe-text name="input-text-4" disabled placeholder="Enter Date" data-helper-text="In YYYY-MM-DD format."></fe-text>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="dist/form-elements.js" type="module"></script>
+  <script>
+
+    document.addEventListener( 'DOMContentLoaded', () => {
+
+      let formElements = window[ 'form-elements' ];
+      formElements.initializeAll();
+
+    } );
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+$phi: 1.618
+$phi-a: 1
+$phi-b: 2
+$phi-c: $phi-a + $phi-b
+$phi-d: $phi-b + $phi-c
+$phi-1: $phi-c + $phi-d
+$phi-2: $phi-d + $phi-1
+$phi-3: $phi-1 + $phi-2
+$phi-4: $phi-2 + $phi-3
+$phi-5: $phi-3 + $phi-4
+$phi-6: $phi-4 + $phi-5
+$phi-7: $phi-5 + $phi-6
+$phi-8: $phi-6 + $phi-7
+
+$color-primary-white: hsla( 0, 0%, 100%, 1 )
+$color-primary-black: hsla( 0, 0%, 0%, 1 )
+$color-primary-gray-0: hsla( 0, 0%, 94%, 1 )
+$color-primary-gray-1: hsla( 0, 0%, 89%, 1 )
+$color-primary-gray-2: hsla( 0, 0%, 55%, 1 )
+$color-primary-gray-3: hsla( 0, 0%, 34%, 1 )
+$color-primary-gray-4: hsla( 0, 0%, 21%, 1 )
+$color-primary-gray-5: hsla( 0, 0%, 13%, 1 )
+$color-primary-gray-6: hsla( 0, 0%, 8%, 1 )
+
+%empty-but-take-space
+  &:before
+    content: "\feff "
+
+%transition-placeholder
+  transform-origin: 0 0
+  transition: transform 0.34s
+
+%form-controls-helper-text
+  @extend %empty-but-take-space
+  display: table-row
+  font-size: smaller
+  color: $color-primary-gray-5
+
+%form-elements-text
+  display: inline-block
+  position: relative
+  min-width: $phi-7 + 0px
+
+  input[ type="text" ]
+    width: 100%
+    background-color: transparent
+    font-size: 0.9rem
+    color: $color-primary-gray-5
+    padding: $phi-3 + 0px 0 $phi-1 + 0px 0
+    outline: none
+    border-width: 0 0 1px 0
+    border-style: solid
+    border-color: $color-primary-gray-2
+    text-overflow: ellipsis
+    border-radius: 0
+
+    &.minimize-label ~ label
+      transform: scale( 0.76 ) translate( 0, -55% )
+      @extend %transition-placeholder
+
+    &:focus
+      border-color: $color-primary-gray-5
+
+      ~ label
+        color: inherit
+
+    &[ disabled ],
+    &[ readonly ]
+      color: $color-primary-gray-2
+
+      ~ label,
+      &.minimize-label ~ label
+        color: $color-primary-gray-2
+
+      &:focus
+        border-color: $color-primary-gray-2
+
+      ~ span.helper-text
+        color: $color-primary-gray-2
+
+    &:not( [ disabled ] )
+      ~ span.helper-text
+        span.user,
+        span.disabled
+          display: none
+
+    &[ disabled ][ readonly ],
+    &:not( [ readonly ] )
+      ~ span.helper-text
+        span.user,
+        span.readonly
+          display: none
+
+    &:not( [ disabled ] ):not( [ readonly ] )
+      ~ span.helper-text
+        span.user
+          display: inline
+
+  label
+    position: absolute
+    top: 0
+    left: 0
+    padding: $phi-3 + 0px 0 $phi-1 + 0px 0
+    color: $color-primary-gray-5
+    @extend %transition-placeholder
+
+  span.helper-text
+    @extend %form-controls-helper-text
