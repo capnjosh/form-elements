@@ -1,5 +1,6 @@
 import { FormElementsText } from './elements/text/_index.js';
 import { FormElementsRadio } from './elements/radio/_index.js';
+import { FormElementsCheckbox } from './elements/checkbox/_index.js';
 (function (name, global, factory) {
     typeof module !== 'undefined' ? module.exports = factory() :
         typeof define === 'function' && define.amd ? define(factory) :
@@ -9,6 +10,7 @@ import { FormElementsRadio } from './elements/radio/_index.js';
         initializeAll: () => {
             FormElementsText();
             FormElementsRadio();
+            FormElementsCheckbox();
         }
     };
     return feature;

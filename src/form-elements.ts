@@ -1,5 +1,6 @@
 import { FormElementsText } from './elements/text/_index.js'
 import { FormElementsRadio } from './elements/radio/_index.js'
+import { FormElementsCheckbox } from './elements/checkbox/_index.js'
 
 ( function( name, global: any, factory ) {
 
@@ -14,6 +15,7 @@ import { FormElementsRadio } from './elements/radio/_index.js'
 
       FormElementsText()
       FormElementsRadio()
+      FormElementsCheckbox()
 
     }
   }
