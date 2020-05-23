@@ -55,7 +55,7 @@ $color-primary-gray-6: hsla( 0, 0%, 8%, 1 )
     border-radius: 0
 
     &.minimize-label ~ label
-      transform: scale( 0.76 ) translate( 0, -55% )
+      transform: scale( 0.88 ) translate( 0, -55% )
       @extend %transition-placeholder
 
     &:focus
@@ -106,3 +106,74 @@ $color-primary-gray-6: hsla( 0, 0%, 8%, 1 )
 
   span.helper-text
     @extend %form-controls-helper-text
+
+@mixin form-controls-radio-checkbox( $type )
+  display: inline-block
+  padding-left: $phi-1 + 0px
+
+  label
+    outline: none
+
+  input[ type="#{ $type }" ]
+    position: absolute
+    opacity: 0
+
+    &:focus ~ span.element-label:after
+      visibility: visible
+      transform: scaleX( 1 )
+
+    &:checked ~ span.element-label
+
+      &:before
+        border-color: $color-primary-gray-5
+        background-color: $color-primary-gray-5
+
+    &[ disabled ]
+
+      &:checked ~ span.element-label
+
+        &:before
+          border-color: $color-primary-gray-2
+          background-color: $color-primary-gray-2
+
+      ~ span.element-label
+        color: $color-primary-gray-2
+
+        &:before
+          border-color: $color-primary-gray-2
+
+        &:after
+          visibility: hidden
+
+  span.element-label
+    position: relative
+    padding-left: $phi-3 + 0px
+    cursor: pointer
+    text-decoration: none
+
+    &:before
+      content: ""
+      border: $phi-b + 0px solid $color-primary-gray-5
+      position: absolute
+      top: $phi-a + 0px
+      left: 0
+      padding: $phi-d + 0px
+
+      @if $type == radio
+        border-radius: 50%
+
+    &:after
+      content: ""
+      position: absolute
+      width: 100%
+      height: $phi-a + 0px
+      bottom: -$phi-b + 0px
+      left: 0
+      background-color: $color-primary-gray-5
+      visibility: hidden
+      transform: scaleX( 0 )
+      transition: all 0.21s ease-in-out 0s
+
+    &:hover:after
+      visibility: visible
+      transform: scaleX( 1 )

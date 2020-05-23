@@ -22,7 +22,7 @@
 
     body {
       font-family: "Roboto", sans-serif;
-      font-size: 16px;
+      font-size: 14px;
       color: hsla( 0, 0%, 13%, 1 )
     }
 
@@ -58,6 +58,9 @@
       <div class="cell">Description</div>
       <div class="cell">Interactive Sample</div>
     </div>
+
+    <!-- Text -->
+
     <div class="content">
       <div class="cell">
         <code>&lt;fe-text&gt;&lt;/fe-text&gt;</code>
@@ -104,6 +107,37 @@
         <fe-text name="input-text-4" disabled placeholder="Enter Date" data-helper-text="In YYYY-MM-DD format."></fe-text>
       </div>
     </div>
+
+     <!--  Radio -->
+
+    <div class="content">
+      <div class="cell">
+        <code>&lt;fe-radio&gt;&lt;/fe-radio&gt;</code>
+      </div>
+      <div class="cell">
+        Simple replacement for <code>input[ type="radio" ]</code>
+      </div>
+      <div class="cell">
+        <fe-radio name="input-radio-1">Red</fe-radio>
+        <fe-radio name="input-radio-1">Green</fe-radio>
+        <fe-radio name="input-radio-1">Blue</fe-radio>
+      </div>
+    </div>
+    <div class="content">
+      <div class="cell">
+        <code>&lt;fe-radio disabled&gt;&lt;/fe-radio&gt;</code>
+      </div>
+      <div class="cell">
+        Supports <code>disabled</code> attribute.
+      </div>
+      <div class="cell">
+        <fe-radio name="input-radio-2" disabled>Red</fe-radio>
+        <fe-radio name="input-radio-2" disabled>Green</fe-radio>
+        <fe-radio name="input-radio-2" disabled>Blue</fe-radio>
+        <fe-radio name="input-radio-2">Alpha</fe-radio>
+      </div>
+    </div>
+
   </div>
 
   <script defer src="dist/form-elements.js" type="module"></script>

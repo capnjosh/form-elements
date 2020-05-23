@@ -1,4 +1,5 @@
 import { FormElementsText } from './elements/text/_index.js';
+import { FormElementsRadio } from './elements/radio/_index.js';
 (function (name, global, factory) {
     typeof module !== 'undefined' ? module.exports = factory() :
         typeof define === 'function' && define.amd ? define(factory) :
@@ -7,6 +8,7 @@ import { FormElementsText } from './elements/text/_index.js';
     let feature = {
         initializeAll: () => {
             FormElementsText();
+            FormElementsRadio();
         }
     };
     return feature;

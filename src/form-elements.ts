@@ -1,4 +1,5 @@
 import { FormElementsText } from './elements/text/_index.js'
+import { FormElementsRadio } from './elements/radio/_index.js'
 
 ( function( name, global: any, factory ) {
 
@@ -12,6 +13,7 @@ import { FormElementsText } from './elements/text/_index.js'
     initializeAll: () => {
 
       FormElementsText()
+      FormElementsRadio()
 
     }
   }
